@@ -18,9 +18,21 @@
 // Category: Technologies
 // Elements: 5
 
-const catToFind = document.querySelectorAll(".item");
-const catToFindNumber = catToFind.length;
+const categoriesToFind = document.querySelectorAll(".item");
+const categoriesLength = categoriesToFind.length;
+console.log(`Number of categories: ${categoriesLength}`);
 
-console.log(`Number of categories: ${catToFindNumber}`);
+categoriesToFind.forEach((category) => {
+  const groupOfElements = [...category.children];
 
-const categoryName = document.querySelectorAll("h2");
+  groupOfElements.forEach((element) => {
+    if (element.tagName === "H2") {
+      console.log(`Category: ${element.textContent}`);
+    }
+  });
+  groupOfElements.forEach((element) => {
+    if (element.tagName === "UL") {
+      console.log(`Elements: ${element.children.length}`);
+    }
+  });
+});
