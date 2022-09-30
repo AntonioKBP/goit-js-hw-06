@@ -29,23 +29,42 @@ const ingredients = [
   "Condiments",
 ];
 
-console.log(ingredients);
-const elements = [];
+// const elements = ingredients.map((ingredient) => {
+//   const itemEl = document.createElement("li");
+//   itemEl.classList.add("item");
+//   itemEl.textContent = ingredient;
+//   return itemEl;
+// });
 
-const ingredientsEl = document.createElement("li");
+// console.log(elements);
 
-ingredientsEl.classList.add("item");
-const ingredientText = document.createElement("p");
-ingredientText.textContent = ingredients[0];
+const createIngridientsList = (ingredients) => {
+  return ingredients.map((ingredient) => {
+    const itemEl = document.createElement("li");
+    itemEl.classList.add("item");
+    itemEl.textContent = ingredient;
+    return itemEl;
+  });
+};
 
-for (let i = 0; i < ingredients.length; i += 1) {
-  console.log(ingredients[i]);
-  const ingredientsEl = document.createElement("li");
+const elements = createIngridientsList(ingredients);
 
-  ingredientsEl.classList.add("item");
-  const ingredientText = document.createElement("p");
-  ingredientText.textContent = ingredients[i];
-  elements.push(ingredientText);
-}
+const listEl = document.querySelector("#ingredients");
+listEl.append(...elements);
 
-console.log(elements);
+// const itemEl = document.createElement("li");
+// itemEl.classList.add("item");
+// itemEl.textContent = ingredients[0];
+// console.log(itemEl);
+// const newIngredients = [];
+// for (let i = 0; i < ingredients.length; i += 1) {
+//   const ingredientsItem = ingredients[i];
+//   const itemEl = document.createElement("li");
+//   itemEl.classList.add("item");
+//   itemEl.textContent = ingredientsItem;
+//   // console.log(itemEl);
+//   newIngredients.push(itemEl);
+// }
+// console.log(newIngredients);
+
+// console.log(listEl);
