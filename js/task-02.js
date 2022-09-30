@@ -52,6 +52,8 @@ const elements = createIngridientsList(ingredients);
 const listEl = document.querySelector("#ingredients");
 listEl.append(...elements);
 
+// console.log(ingredients);
+
 // const itemEl = document.createElement("li");
 // itemEl.classList.add("item");
 // itemEl.textContent = ingredients[0];
