@@ -14,6 +14,15 @@
 //     .padStart(6, 0)}`;
 // }
 
-function getRandomHexColor() {
+const buttonEl = document.querySelector(".change-color");
+const spanText = document.querySelector(".color");
+console.log(spanText);
+
+// document.body.style.backgroundColor = "red";
+buttonEl.addEventListener("click", getRandomHexColor);
+
+function getRandomHexColor(event) {
+  console.log(event.currentTarget.value);
+  document.body.style.backgroundColor = "teal";
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
