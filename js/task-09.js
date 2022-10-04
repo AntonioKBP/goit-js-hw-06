@@ -6,23 +6,13 @@
 //   <button type="button" class="change-color">Change color</button>
 // </div>
 
-// Для генерации случайного цвета используй функцию getRandomHexColor.
-
-// function getRandomHexColor() {
-//   return `#${Math.floor(Math.random() * 16777215)
-//     .toString(16)
-//     .padStart(6, 0)}`;
-// }
-
 const buttonEl = document.querySelector(".change-color");
 const spanText = document.querySelector(".color");
-console.log(spanText);
 
-// document.body.style.backgroundColor = "red";
 buttonEl.addEventListener("click", getRandomHexColor);
 
 function getRandomHexColor(event) {
-  console.log(event.currentTarget.value);
-  document.body.style.backgroundColor = "teal";
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+  document.body.style.backgroundColor = "#" + randomColor;
+  spanText.textContent = randomColor;
 }
