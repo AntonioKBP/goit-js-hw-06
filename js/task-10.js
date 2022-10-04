@@ -22,13 +22,35 @@
 //   тем самым удаляя все созданные элементы.
 
 const divForm = document.querySelector("#controls");
-console.log(divForm);
+const buttonCreate = document.querySelector("button[data-create]");
+const buttonDestroy = document.querySelector("button[data-destroy]");
+const amount = document.querySelector("input");
+const divBoxes = document.querySelector("boxes");
 
-function createBoxes(amount) {}
+buttonCreate.addEventListener("click", createBoxes);
+buttonDestroy.addEventListener("click", destroyBoxes);
+
+const newBoxes = [];
+console.log(newBoxes);
+function createBoxes(amount) {
+  for (let i = 0; i < amount; i += 1) {
+    const boxes = document.createElement("div");
+    boxes.style.width = String(30 + 10 * i) + "px";
+    boxes.style.height = String(30 + 10 * i) + "px";
+    boxes.style.backgroundColor = getRandomHexColor();
+    newBoxes.push(boxes);
+  }
+}
+divBoxes.append(...newBoxes);
+
+function destroyBoxes() {}
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
+
+// box.style.width = String(30 + 10 * i) + "px";
+// box.style.height = String(30 + 10 * i) + "px";
 
 // const colorPalette = document.querySelector(".color-palette");
 // const output = document.querySelector(".output");
