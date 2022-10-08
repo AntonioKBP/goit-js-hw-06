@@ -13,41 +13,6 @@
 // Создай функцию destroyBoxes(), которая очищает содержимое div#boxes,
 //   тем самым удаляя все созданные элементы.
 
-// const divForm = document.querySelector("#controls");
-// const buttonCreate = document.querySelector("button[data-create]");
-// const buttonDestroy = document.querySelector("button[data-destroy]");
-// const inputRef = document.querySelector("input");
-// const divBoxes = document.querySelector("#boxes");
-// console.log(inputRef);
-
-// buttonCreate.addEventListener("click", createBoxes);
-// buttonDestroy.addEventListener("click", destroyBoxes);
-
-// function createBoxes(amount) {
-//   divBoxes.innerHTML = "";
-//   amount = Number(inputRef.value);
-//   for (let i = 0; i < amount; i += 1) {
-//     console.log(amount);
-//     const box = document.createElement("div");
-//     box.style.width = String(30 + 10 * i) + "px";
-//     box.style.height = String(30 + 10 * i) + "px";
-//     box.style.backgroundColor = getRandomHexColor();
-//     box.style.marginTop = "10px";
-//     box.style.borderRadius = "4px";
-//     box.style.boxShadow = "rgba(0, 0, 0, 0.35) 0px 5px 15px";
-//     divBoxes.appendChild(box);
-//   }
-// }
-
-// function destroyBoxes() {
-//   divBoxes.innerHTML = "";
-//   inputRef.value = "";
-// }
-
-// function getRandomHexColor() {
-//   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-// }
-
 const divForm = document.querySelector("#controls");
 const buttonCreate = document.querySelector("button[data-create]");
 const buttonDestroy = document.querySelector("button[data-destroy]");
@@ -84,7 +49,3 @@ function destroyBoxes() {
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
-
-// Доброго дня, Антон)
-// 2) У десятому завданні потрібно створити масив,
-//   потім його наповнити в циклі for і за одну операцію вставити його в розмітку.
